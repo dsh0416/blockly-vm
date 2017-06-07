@@ -33,7 +33,7 @@ module Blockly
       puts operator
 
       return Executor.send(operator, self) if @children.empty?
-      @children.map do |child|
+      @children.map! do |child|
         child.execute
       end
       Executor.send(operator, self)
